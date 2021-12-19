@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>LOG CONSOLE</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel="stylesheet" href="./style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+<script src"script.js"></script>
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="overlay"></div>
+	<div class="scanline"></div>
+<div class="wrapper">	
+<div class="content clearfix">
+		
+		<header class="site clearfix">
+		<div class="col one">
+			<img src="https://telegra.ph/file/885d3ecaf9feea57f8605.png" alt="NTH" width="740" height="729" id="logo-v" />
+		</div>
+			<div class="col two">
+				<h4>SHIRAORI (bot) <br /> <b></h4>
+				<p>----------------------------------------</p>
+				<p>SHIRAORI v 1.0.0</p>
+				<p>(c)2021 Whatsapp Bot</p>
+				<p>- Server 591 -</p>
+			</div>
+		</header>
+		
+		<nav class="site clear">
+			<ul>
+				<li><a href="https://wibusoft.site/" title="">Return Home</a></li>
+				<li><a href="//wa.me/" title="">Our Clients</a></li>
+				<li><a href="//wa.me/628988293493" title="">Contact Us</a></li>
+			</ul>
+		</nav>
+				
+		<p id="log"></p>
+		
+		<p class="clear"><br /></p>
+		
+	</div>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://static.tumblr.com/maopbtg/oimmiw86r/jquery.autosize-min.js'></script><script  src="./script.js"></script>
+<script>
+	(function () {
+    var old = console.log;
+    var logger = document.getElementById('log');
+    console.log = function () {
+      for (var i = 0; i < arguments.length; i++) {
+        if (typeof arguments[i] == 'object') {
+            logger.innerHTML += '>    ' + (JSON && JSON.stringify ? JSON.stringify(arguments[i], undefined, 2) : arguments[i]) + '<br />';
+        } else {
+            logger.innerHTML += '>    ' + arguments[i] + '<br />';
+        }
+      }
+    }
+})();
+	</script>
+</body>
+</html>
